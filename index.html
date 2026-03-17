@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja de Perfumes</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header class="topo">
+    <h1 class="titulo-site">Josy Perfumes</h1>
+
+    <div class="area-busca">
+      <div class="caixa-busca">
+        <input
+          type="text"
+          id="campoBusca"
+          placeholder="O que você procura hoje?"
+        />
+        <button class="botao-busca" id="btnBuscar">🔍</button>
+      </div>
+    </div>
+
+    <div class="sacola" onclick="abrirSacola()">
+      <span class="icone-sacola">🛍️</span>
+      <div class="texto-sacola">
+        <div>Sua</div>
+        <div><strong>Sacola</strong></div>
+      </div>
+      <div class="contador-sacola" id="contadorSacola">0</div>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div class="linha-titulo">
+      <h2>Perfumes em destaque</h2>
+      <div class="resultado-busca" id="resultadoBusca">10 produtos encontrados</div>
+    </div>
+
+    <div class="carrossel-wrapper">
+      <button class="seta esquerda" onclick="rolarCarrossel(-1)">‹</button>
+
+      <div class="carrossel" id="carrosselProdutos"></div>
+
+      <button class="seta direita" onclick="rolarCarrossel(1)">›</button>
+    </div>
+  </main>
+
+  <div class="overlay" id="overlay" onclick="fecharSacola()"></div>
+
+  <aside class="painel-sacola" id="painelSacola">
+    <div class="topo-sacola">
+      <h3>Sua sacola</h3>
+      <button class="fechar-sacola" onclick="fecharSacola()">✕</button>
+    </div>
+
+    <div class="itens-sacola" id="itensSacola"></div>
+
+    <div class="rodape-sacola">
+      <div class="total-sacola">
+        <span>Total</span>
+        <span id="valorTotal">R$ 0,00</span>
+      </div>
+      <button class="btn-whatsapp" onclick="finalizarPedido()">
+        Finalizar pelo WhatsApp
+      </button>
+    </div>
+  </aside>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
