@@ -54,6 +54,11 @@ body{
   background:#fff;
 }
 
+.caixa-busca input:focus{
+  border-color:#199c8e;
+  box-shadow:0 0 0 3px rgba(25,156,142,0.12);
+}
+
 .botao-busca{
   position:absolute;
   right:10px;
@@ -81,6 +86,11 @@ body{
   border-radius:10px;
   padding:10px 14px;
   cursor:pointer;
+  transition:0.2s;
+}
+
+.sacola:hover{
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .texto-sacola{
@@ -120,14 +130,14 @@ body{
 }
 
 .secao-categoria{
-  margin-bottom:30px;
+  margin-bottom:34px;
 }
 
 .linha-titulo{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:10px;
+  margin-bottom:12px;
   gap:12px;
 }
 
@@ -136,7 +146,7 @@ body{
 }
 
 .resultado-busca{
-  font-size:0.9rem;
+  font-size:0.95rem;
   color:#666;
 }
 
@@ -160,6 +170,41 @@ body{
 
 .carrossel::-webkit-scrollbar{
   display:none;
+}
+
+/* ===== BOTÕES DO CARROSSEL ===== */
+
+.seta{
+  position:absolute;
+  top:42%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,0.14);
+  color:#333;
+  font-size:1.35rem;
+  cursor:pointer;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.2s;
+}
+
+.seta:hover{
+  background:#f7f7f7;
+  box-shadow:0 6px 16px rgba(0,0,0,0.18);
+}
+
+.seta.esquerda{
+  left:-2px;
+}
+
+.seta.direita{
+  right:-2px;
 }
 
 /* ===== CARD ===== */
@@ -223,40 +268,16 @@ body{
   border:none;
   background:#199c8e;
   color:#fff;
-  padding:10px;
+  padding:11px;
   border-radius:8px;
-  font-size:0.9rem;
+  font-size:0.95rem;
   font-weight:bold;
   cursor:pointer;
+  transition:0.2s;
 }
 
 .btn-sacola:hover{
   background:#147c71;
-}
-
-/* ===== SETAS ===== */
-
-.seta{
-  position:absolute;
-  top:40%;
-  transform:translateY(-50%);
-  border:none;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#fff;
-  box-shadow:0 4px 12px rgba(0,0,0,0.12);
-  cursor:pointer;
-  font-size:1.2rem;
-  z-index:2;
-}
-
-.seta.esquerda{
-  left:-6px;
-}
-
-.seta.direita{
-  right:-6px;
 }
 
 /* ===== PAINEL SACOLA ===== */
@@ -295,17 +316,33 @@ body{
   z-index:6;
 }
 
+.topo-sacola h3{
+  font-size:1rem;
+}
+
+/* ===== BOTÃO FECHAR ===== */
+
 .fechar-sacola{
   border:none;
   background:#f5f5f5;
-  width:36px;
-  height:36px;
+  width:40px;
+  height:40px;
   border-radius:50%;
-  font-size:1.2rem;
+  font-size:1.4rem;
   cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#1e88e5;
+  transition:0.2s;
 }
 
-/* ÁREA DOS ITENS: só ela rola */
+.fechar-sacola:hover{
+  background:#ebebeb;
+}
+
+/* ===== ITENS DA SACOLA ===== */
+
 .itens-sacola{
   flex:1;
   min-height:0;
@@ -316,15 +353,17 @@ body{
 
 .item-sacola{
   border:1px solid #ececec;
-  border-radius:10px;
-  padding:10px;
-  margin-bottom:10px;
+  border-radius:12px;
+  padding:14px;
+  margin-bottom:12px;
   overflow:hidden;
+  background:#fff;
 }
 
 .item-sacola strong{
   display:block;
   margin-bottom:4px;
+  font-size:1rem;
 }
 
 .item-sacola .linha-item{
@@ -336,22 +375,34 @@ body{
   flex-wrap:wrap;
 }
 
+/* ===== BOTÕES DE QUANTIDADE ===== */
+
 .controles-qtd{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:8px;
 }
 
 .controles-qtd button{
   border:none;
   background:#f1f1f1;
-  width:26px;
-  height:26px;
-  border-radius:6px;
+  width:32px;
+  height:32px;
+  border-radius:8px;
   cursor:pointer;
+  font-size:1.1rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#1e88e5;
+  transition:0.2s;
 }
 
-/* ===== RODAPÉ FIXO DA SACOLA ===== */
+.controles-qtd button:hover{
+  background:#e7e7e7;
+}
+
+/* ===== RODAPÉ DA SACOLA ===== */
 
 .rodape-sacola{
   flex-shrink:0;
@@ -370,20 +421,6 @@ body{
   justify-content:space-between;
   font-weight:bold;
   margin-bottom:12px;
-}
-
-.btn-whatsapp{
-  width:100%;
-  border:none;
-  background:#25d366;
-  color:#fff;
-  padding:14px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-  font-size:0.95rem;
-  position:sticky;
-  bottom:0;
 }
 
 /* ===== FORMULÁRIO ===== */
@@ -419,6 +456,14 @@ body{
   min-height:76px;
 }
 
+.form-pedido input:focus,
+.form-pedido textarea:focus{
+  border-color:#199c8e;
+  box-shadow:0 0 0 3px rgba(25,156,142,0.12);
+}
+
+/* ===== OPÇÕES ENTREGA / RETIRADA ===== */
+
 .opcoes-entrega{
   display:flex;
   gap:10px;
@@ -429,8 +474,8 @@ body{
 .opcao-radio{
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:8px;
+  justify-content:flex-start;
+  gap:10px;
   border:1px solid #dfdfdf;
   border-radius:8px;
   padding:10px 12px;
@@ -444,9 +489,11 @@ body{
 
 .opcao-radio span{
   display:block;
+  flex:1;
   white-space:nowrap;
   word-break:normal;
   overflow-wrap:normal;
+  text-align:left;
 }
 
 #campoEnderecoBox{
@@ -457,6 +504,27 @@ body{
 #enderecoCliente{
   width:100%;
   max-width:100%;
+}
+
+/* ===== BOTÃO WHATSAPP ===== */
+
+.btn-whatsapp{
+  width:100%;
+  border:none;
+  background:#25d366;
+  color:#fff;
+  padding:14px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:0.95rem;
+  position:sticky;
+  bottom:0;
+  transition:0.2s;
+}
+
+.btn-whatsapp:hover{
+  filter:brightness(0.96);
 }
 
 /* ===== VAZIO ===== */
@@ -680,9 +748,11 @@ body{
   .opcao-radio{
     width:100%;
     flex:none;
+    justify-content:flex-start;
   }
 
   .opcao-radio span{
-    white-space:normal;
+    white-space:nowrap;
+    text-align:left;
   }
 }
