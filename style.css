@@ -439,7 +439,7 @@ body{
   color:#333;
 }
 
-.form-pedido input,
+.form-pedido input[type="text"],
 .form-pedido textarea{
   width:100%;
   max-width:100%;
@@ -456,7 +456,7 @@ body{
   min-height:76px;
 }
 
-.form-pedido input:focus,
+.form-pedido input[type="text"]:focus,
 .form-pedido textarea:focus{
   border-color:#199c8e;
   box-shadow:0 0 0 3px rgba(25,156,142,0.12);
@@ -485,6 +485,13 @@ body{
   min-width:0;
   max-width:100%;
   overflow:hidden;
+}
+
+.opcao-radio input[type="radio"]{
+  width:auto;
+  max-width:none;
+  margin:0;
+  flex:0 0 auto;
 }
 
 .opcao-radio span{
