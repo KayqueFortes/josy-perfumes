@@ -2,88 +2,205 @@
     const numeroWhatsApp = "5599981353197";
 
     const produtos = [
-      {
-        id: 1,
-        marca: "ARBO",
-        nome: "Desodorante Colônia Masculino 100ml",
-        preco: 143.92,
-        descricao: "Fragrância fresca e marcante para o dia a dia.",
-        imagem: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 2,
-        marca: "NATIVA SPA",
-        nome: "Açúcar Esfoliante Ameixa 200g",
-        preco: 63.92,
-        descricao: "Esfoliação suave com perfumação deliciosa de ameixa.",
-        imagem: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 3,
-        marca: "CUIDE-SE BEM",
-        nome: "Body Splash Beijinho 200ml",
-        preco: 74.32,
-        descricao: "Cheirinho aconchegante e delicado para usar após o banho.",
-        imagem: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 4,
-        marca: "FLORATTA",
-        nome: "Body Spray Flores Secretas 100ml",
-        preco: 39.92,
-        descricao: "Toque floral leve, perfeito para rotina e saídas.",
-        imagem: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 5,
-        marca: "CUIDE-SE BEM",
-        nome: "Hidratante Labial Cereja Livre 6,2g",
-        preco: 31.92,
-        descricao: "Lábios hidratados com toque rosado e aroma suave.",
-        imagem: "imagens/IMG_1766.JPG.jpeg"
-      },
-      {
-        id: 6,
-        marca: "ELYSÉE",
-        nome: "Eau de Parfum Feminino 50ml",
-        preco: 189.90,
-        descricao: "Perfume sofisticado com presença marcante e elegante.",
-        imagem: "imagens/IMG_1906.JPG.jpeg"
-      },
-      {
-        id: 7,
-        marca: "MALBEC",
-        nome: "Desodorante Colônia 100ml",
-        preco: 164.90,
-        descricao: "Fragrância intensa e moderna para homens.",
-        imagem: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 8,
-        marca: "LILY",
-        nome: "Creme Acetinado Hidratante 250g",
-        preco: 87.90,
-        descricao: "Hidratação intensa com perfumação elegante e duradoura.",
-        imagem: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 9,
-        marca: "QUASAR",
-        nome: "Classic Desodorante Colônia 100ml",
-        preco: 119.90,
-        descricao: "Fragrância fresca com toque cítrico e energético.",
-        imagem: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 10,
-        marca: "GLAMOUR",
-        nome: "Secrets Black Desodorante Colônia 75ml",
-        preco: 139.90,
-        descricao: "Perfume envolvente e elegante para ocasiões especiais.",
-        imagem: "imagens/IMG_1935.JPG.jpeg"
-      }
-    ];
-
+  {
+    id: 1,
+    categoria: "perfumes",
+    marca: "Pepeta",
+    nome: "Pepeta",
+    preco: 143.92,
+    descricao: "10 quilinhos de muito amor.",
+    imagem: "imagens/IMG_1935.JPG.jpeg"
+  },
+  {
+    id: 2,
+    categoria: "perfumes",
+    marca: "Pepeta",
+    nome: "Pepeta",
+    preco: 143.92,
+    descricao: "10 quilinhos de muito amor.",
+    imagem: "imagens/IMG_1935.JPG.jpeg"
+  },
+  {
+    id: 3,
+    categoria: "perfumes",
+    marca: "Pepeta",
+    nome: "Pepeta",
+    preco: 143.92,
+    descricao: "10 quilinhos de muito amor.",
+    imagem: "imagens/IMG_1935.JPG.jpeg"
+  },
+  {
+    id: 4,
+    categoria: "perfumes",
+    marca: "Pepeta",
+    nome: "Pepeta",
+    preco: 143.92,
+    descricao: "10 quilinhos de muito amor.",
+    imagem: "imagens/IMG_1935.JPG.jpeg"
+  },
+  {
+    id: 5,
+    categoria: "perfumes",
+    marca: "Pepeta",
+    nome: "Pepeta",
+    preco: 143.92,
+    descricao: "10 quilinhos de muito amor.",
+    imagem: "imagens/IMG_1935.JPG.jpeg"
+  },
+  {
+    id: 6,
+    categoria: "perfumes",
+    marca: "Pepeta",
+    nome: "Pepeta",
+    preco: 143.92,
+    descricao: "10 quilinhos de muito amor.",
+    imagem: "imagens/IMG_1935.JPG.jpeg"
+  },
+  {
+    id: 7,
+    categoria: "perfumes",
+    marca: "Pepeta",
+    nome: "Pepeta",
+    preco: 143.92,
+    descricao: "10 quilinhos de muito amor.",
+    imagem: "imagens/IMG_1935.JPG.jpeg"
+  },
+  {
+    id: 8,
+    categoria: "hidratantes",
+    marca: "Apollo",
+    nome: "Apollo",
+    preco: 63.92,
+    descricao: "Papagaio safado.",
+    imagem: "imagens/IMG_1766.JPG.jpeg"
+  },
+    {
+    id: 9,
+    categoria: "hidratantes",
+    marca: "Apollo",
+    nome: "Apollo",
+    preco: 63.92,
+    descricao: "Papagaio safado.",
+    imagem: "imagens/IMG_1766.JPG.jpeg"
+  },
+    {
+    id: 10,
+    categoria: "hidratantes",
+    marca: "Apollo",
+    nome: "Apollo",
+    preco: 63.92,
+    descricao: "Papagaio safado.",
+    imagem: "imagens/IMG_1766.JPG.jpeg"
+  },
+    {
+    id: 11,
+    categoria: "hidratantes",
+    marca: "Apollo",
+    nome: "Apollo",
+    preco: 63.92,
+    descricao: "Papagaio safado.",
+    imagem: "imagens/IMG_1766.JPG.jpeg"
+  },
+    {
+    id: 12,
+    categoria: "hidratantes",
+    marca: "Apollo",
+    nome: "Apollo",
+    preco: 63.92,
+    descricao: "Papagaio safado.",
+    imagem: "imagens/IMG_1766.JPG.jpeg"
+  },
+    {
+    id: 13,
+    categoria: "hidratantes",
+    marca: "Apollo",
+    nome: "Apollo",
+    preco: 63.92,
+    descricao: "Papagaio safado.",
+    imagem: "imagens/IMG_1766.JPG.jpeg"
+  },
+    {
+    id: 14,
+    categoria: "hidratantes",
+    marca: "Apollo",
+    nome: "Apollo",
+    preco: 63.92,
+    descricao: "Papagaio safado.",
+    imagem: "imagens/IMG_1766.JPG.jpeg"
+  },
+  {
+    id: 15,
+    categoria: "bodysplash",
+    marca: "Golias e Bella",
+    nome: "Body Splash Beijinho 200ml",
+    preco: 74.32,
+    descricao: "Meus lindos.",
+    imagem: "imagens/IMG_1906.JPG.jpeg"
+  },
+   {
+    id: 16,
+    categoria: "bodysplash",
+    marca: "Golias e Bella",
+    nome: "Body Splash Beijinho 200ml",
+    preco: 74.32,
+    descricao: "Meus lindos.",
+    imagem: "imagens/IMG_1906.JPG.jpeg"
+  },
+   {
+    id: 17,
+    categoria: "bodysplash",
+    marca: "Golias e Bella",
+    nome: "Body Splash Beijinho 200ml",
+    preco: 74.32,
+    descricao: "Meus lindos.",
+    imagem: "imagens/IMG_1906.JPG.jpeg"
+  },
+   {
+    id: 18,
+    categoria: "bodysplash",
+    marca: "Golias e Bella",
+    nome: "Body Splash Beijinho 200ml",
+    preco: 74.32,
+    descricao: "Meus lindos.",
+    imagem: "imagens/IMG_1906.JPG.jpeg"
+  },
+   {
+    id: 19,
+    categoria: "bodysplash",
+    marca: "Golias e Bella",
+    nome: "Body Splash Beijinho 200ml",
+    preco: 74.32,
+    descricao: "Meus lindos.",
+    imagem: "imagens/IMG_1906.JPG.jpeg"
+  },
+   {
+    id: 20,
+    categoria: "bodysplash",
+    marca: "Golias e Bella",
+    nome: "Body Splash Beijinho 200ml",
+    preco: 74.32,
+    descricao: "Meus lindos.",
+    imagem: "imagens/IMG_1906.JPG.jpeg"
+  },
+   {
+    id: 21,
+    categoria: "bodysplash",
+    marca: "Golias e Bella",
+    nome: "Body Splash Beijinho 200ml",
+    preco: 74.32,
+    descricao: "Meus lindos.",
+    imagem: "imagens/IMG_1906.JPG.jpeg"
+  },
+  {
+    id: 4,
+    categoria: "sabonetes",
+    marca: "LILY",
+    nome: "Sabonete em Barra Perfumado",
+    preco: 24.90,
+    descricao: "Limpeza suave com perfumação elegante.",
+    imagem: ""
+  }
+];
     let produtosFiltrados = [...produtos];
     let sacola = [];
 
@@ -104,53 +221,59 @@
       });
     }
 
-    function renderizarProdutos(lista) {
-      carrossel.innerHTML = "";
+    function criarCard(produto) {
+  return `
+    <div class="card">
+      <img class="imagem-produto" src="${produto.imagem}" alt="${produto.nome}">
+      <div class="marca">${produto.marca}</div>
+      <div class="nome">${produto.nome}</div>
+      <div class="preco">${formatarPreco(produto.preco)}</div>
+      <div class="descricao">${produto.descricao}</div>
+      <div class="acoes-produto">
+        <button class="btn-sacola" onclick="adicionarNaSacola(${produto.id})">
+          Adicionar
+        </button>
+      </div>
+    </div>
+  `;
+}
 
-      if (lista.length === 0) {
-        carrossel.innerHTML = `
-          <div class="vazio">
-            Nenhum produto encontrado para essa pesquisa.
-          </div>
-        `;
-        resultadoBusca.textContent = "0 produtos encontrados";
-        return;
-      }
+function renderizarCategoria(lista, categoria, carrosselId, resultadoId) {
+  const carrossel = document.getElementById(carrosselId);
+  const resultado = document.getElementById(resultadoId);
 
-      resultadoBusca.textContent = `${lista.length} produto(s) encontrado(s)`;
+  const filtrados = lista.filter(produto => produto.categoria === categoria);
 
-      lista.forEach(produto => {
-        carrossel.innerHTML += `
-          <div class="card">
-            <img class="imagem-produto" src="${produto.imagem}" alt="${produto.nome}">
-            <div class="marca">${produto.marca}</div>
-            <div class="nome">${produto.nome}</div>
-            <div class="preco">${formatarPreco(produto.preco)}</div>
-            <div class="descricao">${produto.descricao}</div>
-            <div class="acoes-produto">
-              <button class="btn-sacola" onclick="adicionarNaSacola(${produto.id})">
-                Adicionar
-              </button>
-              <button class="btn-remover" onclick="removerDireto(${produto.id})">
-                −
-              </button>
-            </div>
-          </div>
-        `;
-      });
-    }
+  if (filtrados.length === 0) {
+    carrossel.innerHTML = `<div class="vazio">Nenhum produto encontrado.</div>`;
+    resultado.textContent = "0 produtos";
+    return;
+  }
+
+  carrossel.innerHTML = filtrados.map(criarCard).join("");
+  resultado.textContent = `${filtrados.length} produto(s)`;
+}
+
+function renderizarTudo(lista) {
+  renderizarCategoria(lista, "perfumes", "carrosselPerfumes", "resultadoPerfumes");
+  renderizarCategoria(lista, "hidratantes", "carrosselHidratantes", "resultadoHidratantes");
+  renderizarCategoria(lista, "bodysplash", "carrosselBodySplash", "resultadoBodySplash");
+  renderizarCategoria(lista, "sabonetes", "carrosselSabonetes", "resultadoSabonetes");
+}
 
     function pesquisarProdutos() {
-      const termo = campoBusca.value.trim().toLowerCase();
+  const termo = campoBusca.value.trim().toLowerCase();
 
-      produtosFiltrados = produtos.filter(produto =>
-        produto.nome.toLowerCase().includes(termo) ||
-        produto.marca.toLowerCase().includes(termo) ||
-        produto.descricao.toLowerCase().includes(termo)
-      );
+  produtosFiltrados = produtos.filter(produto =>
+    produto.nome.toLowerCase().includes(termo) ||
+    produto.marca.toLowerCase().includes(termo) ||
+    produto.descricao.toLowerCase().includes(termo) ||
+    produto.categoria.toLowerCase().includes(termo)
+  );
 
-      renderizarProdutos(produtosFiltrados);
-    }
+  renderizarTudo(produtosFiltrados);
+}
+
 
     campoBusca.addEventListener("input", pesquisarProdutos);
     btnBuscar.addEventListener("click", pesquisarProdutos);
@@ -247,33 +370,73 @@
     }
 
     function finalizarPedido() {
-      if (sacola.length === 0) {
-        alert("Sua sacola está vazia.");
-        return;
-      }
+  if (sacola.length === 0) {
+    alert("Sua sacola está vazia.");
+    return;
+  }
 
-      let mensagem = "Olá! Gostaria de fazer este pedido:%0A%0A";
+  const nomeCliente = document.getElementById("nomeCliente").value.trim();
+  const tipoRecebimento = document.querySelector('input[name="tipoRecebimento"]:checked').value;
+  const enderecoCliente = document.getElementById("enderecoCliente").value.trim();
 
-      sacola.forEach(item => {
-        mensagem += `• ${item.marca} - ${item.nome}%0A`;
-        mensagem += `Quantidade: ${item.quantidade}%0A`;
-        mensagem += `Subtotal: ${formatarPreco(item.preco * item.quantidade)}%0A%0A`;
-      });
+  if (nomeCliente === "") {
+    alert("Por favor, informe seu nome.");
+    return;
+  }
 
-      const total = sacola.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
-      mensagem += `Total do pedido: ${formatarPreco(total)}`;
+  if (tipoRecebimento === "Entrega" && enderecoCliente === "") {
+    alert("Por favor, informe o endereço para entrega.");
+    return;
+  }
 
-      const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
-      window.open(url, "_blank");
-    }
+  let mensagem = "Olá! Gostaria de fazer este pedido:%0A%0A";
 
-    function rolarCarrossel(direcao) {
-      const larguraCard = 268;
-      carrossel.scrollBy({
-        left: direcao * larguraCard,
-        behavior: "smooth"
-      });
-    }
+  mensagem += `Nome: ${nomeCliente}%0A`;
+  mensagem += `Recebimento: ${tipoRecebimento}%0A`;
 
-    renderizarProdutos(produtosFiltrados);
+  if (tipoRecebimento === "Entrega") {
+    mensagem += `Endereço: ${enderecoCliente}%0A`;
+  }
+
+  mensagem += `%0AItens do pedido:%0A`;
+
+  sacola.forEach(item => {
+    mensagem += `• ${item.marca} - ${item.nome}%0A`;
+    mensagem += `Quantidade: ${item.quantidade}%0A`;
+    mensagem += `Subtotal: ${formatarPreco(item.preco * item.quantidade)}%0A%0A`;
+  });
+
+  const total = sacola.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+  mensagem += `Total do pedido: ${formatarPreco(total)}`;
+
+  const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+  window.open(url, "_blank");
+}
+
+   function rolarCarrossel(id, direcao) {
+  const carrossel = document.getElementById(id);
+  const larguraCard = 268;
+
+  carrossel.scrollBy({
+    left: direcao * larguraCard,
+    behavior: "smooth"
+  });
+}
+
+    renderizarTudo(produtosFiltrados);
+alternarEndereco();
+atualizarSacola();
+
+
     atualizarSacola();
+
+    function alternarEndereco() {
+  const tipo = document.querySelector('input[name="tipoRecebimento"]:checked').value;
+  const campoEnderecoBox = document.getElementById("campoEnderecoBox");
+
+  if (tipo === "Retirada") {
+    campoEnderecoBox.style.display = "none";
+  } else {
+    campoEnderecoBox.style.display = "block";
+  }
+}

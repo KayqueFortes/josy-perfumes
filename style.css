@@ -1,637 +1,418 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #f5f5f5;
-      color: #222;
-    }
-
-    .topo {
-      position: relative;
-      background: #fff;
-      padding: 24px 20px 18px;
-      border-bottom: 1px solid #e9e9e9;
-    }
-
-    .titulo-site {
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #111;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-    }
-
-    .area-busca {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .caixa-busca {
-      width: 100%;
-      max-width: 500px;
-      position: relative;
-    }
-
-    .caixa-busca input {
-      width: 100%;
-      height: 52px;
-      border: 1px solid #d8d8d8;
-      border-radius: 10px;
-      padding: 0 55px 0 18px;
-      font-size: 1rem;
-      outline: none;
-      background: #fff;
-    }
-
-    .caixa-busca input:focus {
-      border-color: #199c8e;
-      box-shadow: 0 0 0 3px rgba(25, 156, 142, 0.12);
-    }
-
-    .botao-busca {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      border: none;
-      background: transparent;
-      font-size: 1.3rem;
-      cursor: pointer;
-      color: #199c8e;
-    }
-
-    .sacola {
-      position: absolute;
-      right: 24px;
-      top: 28px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #fff;
-      border: 1px solid #e6e6e6;
-      border-radius: 12px;
-      padding: 10px 14px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .sacola:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .icone-sacola {
-      font-size: 1.3rem;
-      color: #199c8e;
-    }
-
-    .texto-sacola {
-      text-align: left;
-      line-height: 1.1;
-      font-size: 0.95rem;
-    }
-
-    .contador-sacola {
-      background: #199c8e;
-      color: #fff;
-      font-weight: bold;
-      min-width: 24px;
-      height: 24px;
-      padding: 0 7px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-    }
-
-    .conteudo {
-      padding: 24px 18px 40px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .linha-titulo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .linha-titulo h2 {
-      font-size: 1.3rem;
-      color: #222;
-    }
-
-    .resultado-busca {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    .carrossel-wrapper {
-      position: relative;
-    }
-
-    .carrossel {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 8px 4px 14px;
-      scrollbar-width: none;
-    }
-
-    .carrossel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .card {
-      min-width: 250px;
-      max-width: 250px;
-      background: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 12px;
-      padding: 14px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-      transition: 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    }
-
-    .imagem-produto {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 14px;
-      background: #f0f0f0;
-    }
-
-    .marca {
-      font-size: 0.9rem;
-      font-weight: bold;
-      color: #222;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .nome {
-      font-size: 1rem;
-      color: #333;
-      line-height: 1.35;
-      min-height: 54px;
-      margin-bottom: 12px;
-    }
-
-    .preco {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #177a6f;
-      margin-bottom: 8px;
-    }
-
-    .descricao {
-      font-size: 0.92rem;
-      color: #666;
-      line-height: 1.45;
-      min-height: 66px;
-      margin-bottom: 14px;
-    }
-
-    .acoes-produto {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .btn-sacola {
-      flex: 1;
-      border: none;
-      background: #199c8e;
-      color: #fff;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn-sacola:hover {
-      background: #147c71;
-    }
-
-    .btn-remover {
-      border: none;
-      background: #f1f1f1;
-      color: #444;
-      padding: 12px 14px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn-remover:hover {
-      background: #e5e5e5;
-    }
-
-    .seta {
-      position: absolute;
-      top: 42%;
-      transform: translateY(-50%);
-      border: none;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      cursor: pointer;
-      font-size: 1.4rem;
-      z-index: 2;
-    }
-
-    .seta.esquerda {
-      left: -8px;
-    }
-
-    .seta.direita {
-      right: -8px;
-    }
-
-    .vazio {
-      width: 100%;
-      text-align: center;
-      padding: 40px 20px;
-      color: #777;
-      font-size: 1.05rem;
-      background: #fff;
-      border-radius: 12px;
-      border: 1px dashed #d7d7d7;
-    }
-
-    .painel-sacola {
-      position: fixed;
-      top: 0;
-      right: -380px;
-      width: 360px;
-      max-width: 92vw;
-      height: 100vh;
-      background: #fff;
-      box-shadow: -8px 0 24px rgba(0,0,0,0.15);
-      z-index: 1000;
-      transition: right 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .painel-sacola.aberto {
-      right: 0;
-    }
-
-    .topo-sacola {
-      padding: 18px;
-      border-bottom: 1px solid #e9e9e9;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .topo-sacola h3 {
-      font-size: 1.2rem;
-    }
-
-    .fechar-sacola {
-      border: none;
-      background: transparent;
-      font-size: 1.4rem;
-      cursor: pointer;
-    }
-
-    .itens-sacola {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px;
-    }
-
-    .item-sacola {
-      border: 1px solid #ececec;
-      border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 12px;
-    }
-
-    .item-sacola strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .item-sacola .linha-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 10px;
-      align-items: center;
-    }
-
-    .controles-qtd {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .controles-qtd button {
-      border: none;
-      background: #f1f1f1;
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .rodape-sacola {
-      border-top: 1px solid #e9e9e9;
-      padding: 16px;
-    }
-
-    .total-sacola {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.05rem;
-      margin-bottom: 14px;
-      font-weight: bold;
-    }
-
-    .btn-whatsapp {
-      width: 100%;
-      border: none;
-      background: #25d366;
-      color: #fff;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 999;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.25s;
-    }
-
-    .overlay.ativo {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    @media (max-width: 900px) {
-      .sacola {
-        position: static;
-        margin: 16px auto 0;
-        width: fit-content;
-      }
-
-      .topo {
-        padding-bottom: 24px;
-      }
-
-      .titulo-site {
-        font-size: 1.9rem;
-      }
-
-      .seta {
-        display: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .titulo-site {
-        font-size: 1.6rem;
-      }
-
-      .card {
-        min-width: 82vw;
-        max-width: 82vw;
-      }
-
-      .linha-titulo {
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 900px) {
-  .topo {
-    padding: 20px 14px 20px;
-  }
-
-  .titulo-site {
-    font-size: 1.8rem;
-    margin-bottom: 14px;
-    line-height: 1.2;
-  }
-
-  .area-busca {
-    width: 100%;
-  }
-
-  .caixa-busca {
-    max-width: 100%;
-  }
-
-  .caixa-busca input {
-    height: 48px;
-    font-size: 0.95rem;
-    border-radius: 12px;
-  }
-
-  .sacola {
-    position: static;
-    margin: 14px auto 0;
-    width: fit-content;
-    padding: 10px 14px;
-  }
-
-  .conteudo {
-    padding: 18px 12px 30px;
-  }
-
-  .linha-titulo {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    margin-bottom: 10px;
-  }
-
-  .linha-titulo h2 {
-    font-size: 1.1rem;
-  }
-
-  .resultado-busca {
-    font-size: 0.9rem;
-  }
-
-  .seta {
-    display: none;
-  }
-
- .carrossel {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-
-  -webkit-overflow-scrolling: touch;
-
-  scrollbar-width: none;
-
-  scroll-snap-type: x mandatory;
+  *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-.carrossel::-webkit-scrollbar {
-  display: none;
+body{
+  background:#f5f5f5;
+  color:#222;
 }
 
-  .card {
-  min-width: 250px;
-  scroll-snap-align: start;
+/* ================= TOPO ================= */
+
+.topo{
+  position:relative;
+  background:#fff;
+  padding:24px 20px 18px;
+  border-bottom:1px solid #e9e9e9;
 }
 
-  .imagem-produto {
-    height: 170px;
+.titulo-site{
+  text-align:center;
+  font-size:2rem;
+  font-weight:bold;
+  margin-bottom:16px;
+}
+
+.area-busca{
+  display:flex;
+  justify-content:center;
+}
+
+.caixa-busca{
+  width:min(100%,500px);
+  position:relative;
+}
+
+.caixa-busca input{
+  width:100%;
+  height:48px;
+  border:1px solid #d8d8d8;
+  border-radius:10px;
+  padding:0 50px 0 16px;
+  font-size:0.95rem;
+}
+
+.botao-busca{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  border:none;
+  background:transparent;
+  font-size:1.2rem;
+  cursor:pointer;
+  color:#199c8e;
+}
+
+.sacola{
+  position:absolute;
+  right:20px;
+  top:26px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  padding:8px 12px;
+  cursor:pointer;
+}
+
+.icone-sacola{
+  font-size:1.2rem;
+  color:#199c8e;
+}
+
+.contador-sacola{
+  background:#199c8e;
+  color:#fff;
+  font-weight:bold;
+  min-width:22px;
+  height:22px;
+  padding:0 6px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0.8rem;
+}
+
+/* ================= CONTEÚDO ================= */
+
+.conteudo{
+  padding:24px 18px 40px;
+  max-width:1400px;
+  margin:auto;
+}
+
+.secao-categoria{
+  margin-bottom:30px;
+}
+
+.linha-titulo{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.linha-titulo h2{
+  font-size:1.2rem;
+}
+
+.resultado-busca{
+  font-size:0.9rem;
+  color:#666;
+}
+
+/* ================= CARROSSEL ================= */
+
+.carrossel-wrapper{
+  position:relative;
+}
+
+.carrossel{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:6px 4px 10px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+}
+
+.carrossel::-webkit-scrollbar{
+  display:none;
+}
+
+/* ================= CARD PRODUTO ================= */
+
+.card{
+  min-width:240px;
+  max-width:240px;
+  background:#fff;
+  border:1px solid #e8e8e8;
+  border-radius:12px;
+  padding:12px;
+  flex-shrink:0;
+  scroll-snap-align:start;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 14px rgba(0,0,0,0.08);
+}
+
+.imagem-produto{
+  width:100%;
+  height:165px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+/* TEXTO DO CARD */
+
+.marca{
+  font-size:0.8rem;
+  font-weight:bold;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+.nome{
+  font-size:0.95rem;
+  line-height:1.3;
+  margin-bottom:6px;
+}
+
+.preco{
+  font-size:1.25rem;
+  font-weight:bold;
+  color:#177a6f;
+  margin-bottom:6px;
+}
+
+.descricao{
+  font-size:0.85rem;
+  color:#666;
+  line-height:1.35;
+  margin-bottom:10px;
+}
+
+/* BOTÃO */
+
+.btn-sacola{
+  width:100%;
+  border:none;
+  background:#199c8e;
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+  font-size:0.9rem;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btn-sacola:hover{
+  background:#147c71;
+}
+
+/* ================= SETAS ================= */
+
+.seta{
+  position:absolute;
+  top:40%;
+  transform:translateY(-50%);
+  border:none;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  cursor:pointer;
+  font-size:1.2rem;
+  z-index:2;
+}
+
+.seta.esquerda{
+  left:-6px;
+}
+
+.seta.direita{
+  right:-6px;
+}
+
+/* ================= SACOLA ================= */
+
+.painel-sacola{
+  position:fixed;
+  top:0;
+  right:-380px;
+  width:360px;
+  max-width:92vw;
+  height:100vh;
+  background:#fff;
+  box-shadow:-8px 0 24px rgba(0,0,0,0.15);
+  z-index:1000;
+  transition:right .3s;
+  display:flex;
+  flex-direction:column;
+}
+
+.painel-sacola.aberto{
+  right:0;
+}
+
+.topo-sacola{
+  padding:16px;
+  border-bottom:1px solid #e9e9e9;
+  display:flex;
+  justify-content:space-between;
+}
+
+.itens-sacola{
+  flex:1;
+  overflow-y:auto;
+  padding:16px;
+}
+
+.item-sacola{
+  border:1px solid #ececec;
+  border-radius:10px;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.controles-qtd{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.controles-qtd button{
+  border:none;
+  background:#f1f1f1;
+  width:26px;
+  height:26px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ================= RODAPÉ SACOLA ================= */
+
+.rodape-sacola{
+  border-top:1px solid #e9e9e9;
+  padding:16px;
+}
+
+.total-sacola{
+  display:flex;
+  justify-content:space-between;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.btn-whatsapp{
+  width:100%;
+  border:none;
+  background:#25d366;
+  color:#fff;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ================= FORM PEDIDO ================= */
+
+.form-pedido{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:14px;
+}
+
+.form-pedido input,
+.form-pedido textarea{
+  border:1px solid #dcdcdc;
+  border-radius:8px;
+  padding:10px;
+  font-size:0.9rem;
+}
+
+.form-pedido textarea{
+  resize:none;
+  min-height:70px;
+}
+
+.opcoes-entrega{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.opcao-radio{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  border:1px solid #dfdfdf;
+  border-radius:8px;
+  padding:8px 10px;
+  background:#fafafa;
+  cursor:pointer;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  z-index:999;
+  opacity:0;
+  pointer-events:none;
+  transition:0.25s;
+}
+
+.overlay.ativo{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .sacola{
+    position:static;
+    margin:14px auto 0;
   }
 
-  .nome {
-    font-size: 0.95rem;
-    min-height: auto;
+  .seta{
+    display:none;
   }
 
-  .preco {
-    font-size: 1.2rem;
+  .painel-sacola{
+    width:100%;
+    max-width:100%;
+    right:-100%;
   }
 
-  .descricao {
-    font-size: 0.88rem;
-    min-height: auto;
-  }
-
-  .acoes-produto {
-    flex-direction: column;
-  }
-
-  .btn-sacola,
-  .btn-remover {
-    width: 100%;
-  }
-
-  .painel-sacola {
-    width: 100%;
-    max-width: 100%;
-    right: -100%;
-  }
-
-  .painel-sacola.aberto {
-    right: 0;
+  .painel-sacola.aberto{
+    right:0;
   }
 }
 
-@media (max-width: 520px) {
-  .topo {
-    padding: 18px 10px 18px;
+@media(max-width:520px){
+
+  .titulo-site{
+    font-size:1.4rem;
   }
 
-  .titulo-site {
-    font-size: 1.45rem;
-    margin-bottom: 12px;
+  .card{
+    min-width:82vw;
+    max-width:82vw;
   }
 
-  .caixa-busca input {
-    height: 46px;
-    padding: 0 48px 0 14px;
-    font-size: 0.92rem;
+  .imagem-produto{
+    height:180px;
   }
 
-  .botao-busca {
-    right: 8px;
-    font-size: 1.1rem;
-  }
-
-  .sacola {
-    padding: 8px 12px;
-    border-radius: 10px;
-    gap: 8px;
-  }
-
-  .icone-sacola {
-    font-size: 1.1rem;
-  }
-
-  .texto-sacola {
-    font-size: 0.88rem;
-  }
-
-  .contador-sacola {
-    min-width: 22px;
-    height: 22px;
-    font-size: 0.78rem;
-  }
-
-  .conteudo {
-    padding: 16px 10px 24px;
-  }
-
-  .card {
-    min-width: 82vw;
-    max-width: 82vw;
-  }
-
-  .imagem-produto {
-    height: 190px;
-  }
-
-  .marca {
-    font-size: 0.82rem;
-  }
-
-  .nome {
-    font-size: 0.92rem;
-    line-height: 1.3;
-  }
-
-  .preco {
-    font-size: 1.1rem;
-  }
-
-  .descricao {
-    font-size: 0.85rem;
-    line-height: 1.35;
-  }
-
-  .topo-sacola h3 {
-    font-size: 1rem;
-  }
-
-  .rodape-sacola {
-    padding: 14px;
-  }
-
-  .btn-whatsapp {
-    padding: 13px;
-    font-size: 0.95rem;
-  }
 }
