@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loja de Perfumes</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
   <header class="topo">
@@ -33,62 +32,55 @@
   </header>
 
   <main class="conteudo">
-    <div class="linha-titulo">
-      <h2></h2>
-      <div class="resultado-busca" id="resultadoBusca"></div>
-    </div>
+    <section class="secao-categoria">
+      <div class="linha-titulo">
+        <h2>Perfumes</h2>
+        <div class="resultado-busca" id="resultadoPerfumes"></div>
+      </div>
+      <div class="carrossel-wrapper">
+        <button class="seta esquerda" onclick="rolarCarrossel('carrosselPerfumes', -1)">‹</button>
+        <div class="carrossel" id="carrosselPerfumes"></div>
+        <button class="seta direita" onclick="rolarCarrossel('carrosselPerfumes', 1)">›</button>
+      </div>
+    </section>
 
-   <section class="secao-categoria">
-  <div class="linha-titulo">
-    <h2>Perfumes</h2>
-    <div class="resultado-busca" id="resultadoPerfumes"></div>
-  </div>
-  <div class="carrossel-wrapper">
-    <button class="seta esquerda" onclick="rolarCarrossel('carrosselPerfumes', -1)">‹</button>
-    <div class="carrossel" id="carrosselPerfumes"></div>
-    <button class="seta direita" onclick="rolarCarrossel('carrosselPerfumes', 1)">›</button>
-  </div>
-</section>
+    <section class="secao-categoria">
+      <div class="linha-titulo">
+        <h2>Hidratantes</h2>
+        <div class="resultado-busca" id="resultadoHidratantes"></div>
+      </div>
+      <div class="carrossel-wrapper">
+        <button class="seta esquerda" onclick="rolarCarrossel('carrosselHidratantes', -1)">‹</button>
+        <div class="carrossel" id="carrosselHidratantes"></div>
+        <button class="seta direita" onclick="rolarCarrossel('carrosselHidratantes', 1)">›</button>
+      </div>
+    </section>
 
-<section class="secao-categoria">
-  <div class="linha-titulo">
-    <h2>Hidratantes</h2>
-    <div class="resultado-busca" id="resultadoHidratantes"></div>
-  </div>
-  <div class="carrossel-wrapper">
-    <button class="seta esquerda" onclick="rolarCarrossel('carrosselHidratantes', -1)">‹</button>
-    <div class="carrossel" id="carrosselHidratantes"></div>
-    <button class="seta direita" onclick="rolarCarrossel('carrosselHidratantes', 1)">›</button>
-  </div>
-</section>
+    <section class="secao-categoria">
+      <div class="linha-titulo">
+        <h2>Body Splash</h2>
+        <div class="resultado-busca" id="resultadoBodySplash"></div>
+      </div>
+      <div class="carrossel-wrapper">
+        <button class="seta esquerda" onclick="rolarCarrossel('carrosselBodySplash', -1)">‹</button>
+        <div class="carrossel" id="carrosselBodySplash"></div>
+        <button class="seta direita" onclick="rolarCarrossel('carrosselBodySplash', 1)">›</button>
+      </div>
+    </section>
 
-<section class="secao-categoria">
-  <div class="linha-titulo">
-    <h2>Body Splash</h2>
-    <div class="resultado-busca" id="resultadoBodySplash"></div>
-  </div>
-  <div class="carrossel-wrapper">
-    <button class="seta esquerda" onclick="rolarCarrossel('carrosselBodySplash', -1)">‹</button>
-    <div class="carrossel" id="carrosselBodySplash"></div>
-    <button class="seta direita" onclick="rolarCarrossel('carrosselBodySplash', 1)">›</button>
-  </div>
-</section>
-
-<section class="secao-categoria">
-  <div class="linha-titulo">
-    <h2>Sabonetes</h2>
-    <div class="resultado-busca" id="resultadoSabonetes"></div>
-  </div>
-  <div class="carrossel-wrapper">
-    <button class="seta esquerda" onclick="rolarCarrossel('carrosselSabonetes', -1)">‹</button>
-    <div class="carrossel" id="carrosselSabonetes"></div>
-    <button class="seta direita" onclick="rolarCarrossel('carrosselSabonetes', 1)">›</button>
-  </div>
-</section>
-
+    <section class="secao-categoria">
+      <div class="linha-titulo">
+        <h2>Sabonetes</h2>
+        <div class="resultado-busca" id="resultadoSabonetes"></div>
+      </div>
+      <div class="carrossel-wrapper">
+        <button class="seta esquerda" onclick="rolarCarrossel('carrosselSabonetes', -1)">‹</button>
+        <div class="carrossel" id="carrosselSabonetes"></div>
+        <button class="seta direita" onclick="rolarCarrossel('carrosselSabonetes', 1)">›</button>
+      </div>
+    </section>
   </main>
 
-  
   <div class="overlay" id="overlay" onclick="fecharSacola()"></div>
 
   <aside class="painel-sacola" id="painelSacola">
@@ -99,42 +91,41 @@
 
     <div class="itens-sacola" id="itensSacola"></div>
 
-   <div class="rodape-sacola">
-  <div class="form-pedido">
-    <label for="nomeCliente">Seu nome</label>
-    <input type="text" id="nomeCliente" placeholder="Digite seu nome">
+    <div class="rodape-sacola">
+      <div class="form-pedido">
+        <label for="nomeCliente">Seu nome</label>
+        <input type="text" id="nomeCliente" placeholder="Digite seu nome">
 
-    <label>Forma de recebimento</label>
-    <div class="opcoes-entrega">
-      <label class="opcao-radio">
-        <input type="radio" name="tipoRecebimento" value="Entrega" checked onchange="alternarEndereco()">
-        <span>Entrega</span>
-      </label>
+        <label>Forma de recebimento</label>
+        <div class="opcoes-entrega">
+          <label class="opcao-radio">
+            <input type="radio" name="tipoRecebimento" value="Entrega" checked onchange="alternarEndereco()">
+            <span>Entrega</span>
+          </label>
 
-      <label class="opcao-radio">
-        <input type="radio" name="tipoRecebimento" value="Retirada" onchange="alternarEndereco()">
-        <span>Retirada</span>
-      </label>
+          <label class="opcao-radio">
+            <input type="radio" name="tipoRecebimento" value="Retirada" onchange="alternarEndereco()">
+            <span>Retirada</span>
+          </label>
+        </div>
+
+        <div id="campoEnderecoBox">
+          <label for="enderecoCliente">Endereço</label>
+          <textarea id="enderecoCliente" placeholder="Rua, número, bairro, referência"></textarea>
+        </div>
+      </div>
+
+      <div class="total-sacola">
+        <span>Total</span>
+        <span id="valorTotal">R$ 0,00</span>
+      </div>
+
+      <button class="btn-whatsapp" onclick="finalizarPedido()">
+        Finalizar pelo WhatsApp
+      </button>
     </div>
-
-    <div id="campoEnderecoBox">
-      <label for="enderecoCliente">Endereço</label>
-      <textarea id="enderecoCliente" placeholder="Rua, número, bairro, referência"></textarea>
-    </div>
-  </div>
-
-  <div class="total-sacola">
-    <span>Total</span>
-    <span id="valorTotal">R$ 0,00</span>
-  </div>
-
-  <button class="btn-whatsapp" onclick="finalizarPedido()">
-    Finalizar pelo WhatsApp
-  </button>
-</div>
   </aside>
 
- <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

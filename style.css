@@ -59,7 +59,7 @@ body{
   color:#199c8e;
 }
 
-/* ===== SACOLA BOTÃO ===== */
+/* ===== BOTÃO SACOLA ===== */
 
 .sacola{
   position:absolute;
@@ -275,6 +275,7 @@ body{
 }
 
 .topo-sacola{
+  flex-shrink:0;
   padding:16px;
   border-bottom:1px solid #e9e9e9;
   display:flex;
@@ -296,11 +297,12 @@ body{
   cursor:pointer;
 }
 
+/* ÁREA DOS ITENS: só ela rola */
 .itens-sacola{
   flex:1;
+  min-height:0;
   overflow-y:auto;
-  padding:16px;
-  padding-bottom:320px;
+  padding:14px;
 }
 
 .item-sacola{
@@ -338,16 +340,17 @@ body{
   cursor:pointer;
 }
 
-/* ===== RODAPÉ SACOLA ===== */
+/* ===== RODAPÉ FIXO DA SACOLA ===== */
 
 .rodape-sacola{
+  flex-shrink:0;
   border-top:1px solid #e9e9e9;
-  padding:16px;
+  padding:14px;
+  padding-bottom:calc(16px + env(safe-area-inset-bottom));
   background:#fff;
-  position:sticky;
-  bottom:0;
-  z-index:10;
   box-shadow:0 -6px 16px rgba(0,0,0,0.08);
+  max-height:42dvh;
+  overflow-y:auto;
 }
 
 .total-sacola{
@@ -367,9 +370,11 @@ body{
   font-weight:bold;
   cursor:pointer;
   font-size:0.95rem;
+  position:sticky;
+  bottom:0;
 }
 
-/* ===== FORMULÁRIO PEDIDO ===== */
+/* ===== FORMULÁRIO ===== */
 
 .form-pedido{
   display:flex;
@@ -386,16 +391,18 @@ body{
 
 .form-pedido input,
 .form-pedido textarea{
+  width:100%;
   border:1px solid #dcdcdc;
   border-radius:8px;
   padding:10px;
   font-size:0.9rem;
   outline:none;
+  background:#fff;
 }
 
 .form-pedido textarea{
   resize:none;
-  min-height:70px;
+  min-height:76px;
 }
 
 .opcoes-entrega{
@@ -415,7 +422,7 @@ body{
   cursor:pointer;
 }
 
-/* ===== ESTADO VAZIO ===== */
+/* ===== VAZIO ===== */
 
 .vazio{
   width:100%;
@@ -448,7 +455,6 @@ body{
 /* ===== TABLET ===== */
 
 @media(max-width:900px){
-
   .topo{
     padding:20px 14px 20px;
   }
@@ -477,7 +483,6 @@ body{
     position:static;
     margin:14px auto 0;
     width:min(100%,420px);
-    display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
@@ -492,16 +497,8 @@ body{
     padding:18px 12px 30px;
   }
 
-  .linha-titulo{
-    margin-bottom:10px;
-  }
-
   .linha-titulo h2{
     font-size:1.1rem;
-  }
-
-  .resultado-busca{
-    font-size:0.9rem;
   }
 
   .seta{
@@ -511,7 +508,6 @@ body{
   .painel-sacola{
     width:100%;
     max-width:100%;
-    right:0;
     transform:translateX(100%);
   }
 
@@ -523,7 +519,6 @@ body{
 /* ===== CELULAR ===== */
 
 @media(max-width:520px){
-
   .topo{
     padding:18px 10px 18px;
   }
@@ -607,7 +602,6 @@ body{
   .painel-sacola{
     width:100%;
     max-width:100%;
-    right:0;
     height:100dvh;
     transform:translateX(100%);
   }
@@ -621,22 +615,16 @@ body{
   }
 
   .itens-sacola{
-    padding:14px;
-    padding-bottom:360px;
+    padding:12px;
   }
 
   .rodape-sacola{
-    padding:14px;
+    max-height:46dvh;
+    padding:12px;
     padding-bottom:calc(18px + env(safe-area-inset-bottom));
-    background:#fff;
-    position:sticky;
-    bottom:0;
-    z-index:10;
-    box-shadow:0 -6px 16px rgba(0,0,0,0.08);
   }
 
   .btn-whatsapp{
-    width:100%;
     padding:14px;
     font-size:0.95rem;
     border-radius:10px;
